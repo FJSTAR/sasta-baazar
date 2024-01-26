@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/service/api.service';
 import { CartService } from 'src/app/service/cart.service';
-import { FilterPipe } from 'src/app/shared/filter.pipe';
 
 @Component({
   selector: 'app-products',
@@ -38,14 +37,6 @@ export class ProductsComponent implements OnInit {
     this.cartService.addtoCart(item);
   }
 
-  filter(category:string){
-    this.filterCategory=this.productList
-    .filter((a:any)=>{
-      if(a.category==category || category==' '){
-        return a;
-      }
-    })
-  }
 
 
 
